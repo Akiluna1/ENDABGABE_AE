@@ -28,7 +28,6 @@ const cursors = new Map();
 
 /**
  * Send full state to the server (Web Rooms).
- * - `stars`: legacy key (some servers/clients still use it)
  * - `coursor`: current key (kept for compatibility, even though misspelled)
  * - `slider1`: hue (0..360)
  * - `slider2`: volume/control (0..1, 4 decimals)
@@ -46,8 +45,6 @@ function sendFullState() {
 
   ws.send(
     JSON.stringify({
-      // Send both keys for compatibility with different server/client versions
-      stars: cursorsArray,
       coursor: cursorsArray,
       slider1: Math.max(0, Math.min(360, hue)),
       slider2: Math.max(0, Math.min(1, Number(volumeValue.toFixed(4)))),
