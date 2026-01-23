@@ -1,3 +1,5 @@
+//Kommentare mit Chatgpt generiert
+
 /********************************************
  * Web Rooms – WebSocket Connection
  ********************************************/
